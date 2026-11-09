@@ -1,4 +1,18 @@
-node_modules/ 
-.env 
-frontend/node_modules/ 
-frontend/node_modules/ 
+# Dependencias
+node_modules/
+
+# Secretos (NUNCA subir a GitHub)
+.env
+.env.*
+!.env.example
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+
+# Compilados y registros
+dist/
+build/
+*.log
+
+# Sistema / editor
+.DS_Store
+.vscode/

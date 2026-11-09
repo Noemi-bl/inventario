@@ -1,0 +1,12 @@
+rules_version = '2';
+
+// Toda la lectura y escritura pasa por el backend (Firebase Admin), que valida
+// sesión, roles y stock. Por eso el acceso directo desde el navegador queda
+// bloqueado: nadie puede alterar el inventario saltándose la API.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
